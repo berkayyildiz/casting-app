@@ -29,10 +29,22 @@ const routes: Routes = [
       },
       {
         path: 'notifications',
-        loadChildren: () =>
-          import('../pages/notifications-page/notifications-page.module').then(
-            (m) => m.NotificationsPagePageModule
-          ),
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import(
+                '../pages/notifications-page/notifications-page.module'
+              ).then((m) => m.NotificationsPagePageModule),
+          },
+          {
+            path: 'option-confirm',
+            loadChildren: () =>
+              import(
+                '../pages/option-confirm-page/option-confirm-page.module'
+              ).then((m) => m.OptionConfirmPagePageModule),
+          },
+        ],
       },
       {
         path: 'profile',

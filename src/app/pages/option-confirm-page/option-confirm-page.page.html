@@ -1,13 +1,107 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>option-confirm-page</ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title>Opsiyon İsteği</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">option-confirm-page</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item-divider>Proje</ion-item-divider>
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img
+          alt="Silhouette of mountains"
+          src="https://istinyepark.com.tr/data-stores/bella-maison-logo.jpg"
+        />
+      </ion-thumbnail>
+      <ion-label>
+        <h1 class="font-bold">Bella Maison</h1>
+        <h2>Reklam Filmi</h2>
+        <h3>Sporcu Erkek</h3>
+
+        <div class="flex pt-1 pb-1.5 items-center gap-3">
+          <h4 class="flex items-center">
+            <ion-icon class="mr-1" [name]="'calendar'"></ion-icon>14.10.2024
+          </h4>
+          <h4 class="flex items-center">
+            <ion-icon class="mr-1" [name]="'time'"></ion-icon>Son 10 gün
+          </h4>
+        </div>
+        <ion-button (click)="openProject()" color="secondary" size="small"
+          >Proje Detaylarına Bak</ion-button
+        >
+      </ion-label>
+    </ion-item>
+    <ion-item-divider>Müsaitlik Durumu</ion-item-divider>
+    <ion-item lines="none">
+      <ion-label>
+        <div class="text-center font-medium mb-3">
+          22.05.2024 - 26.05.2024 tarihi aralığındaki tüm günlerde müsait misin?
+        </div>
+
+        <div class="grid gap-2 grid-cols-2">
+          <ion-button
+            (click)="isAvailableAllDates = false"
+            [fill]="isAvailableAllDates === false ? 'solid' : 'outline'"
+            size="small"
+            >Müsait olmadığım günler var</ion-button
+          >
+          <ion-button
+            (click)="isAvailableAllDates = true"
+            [fill]="isAvailableAllDates === true ? 'solid' : 'outline'"
+            size="small"
+            >Tüm günler müsaitim</ion-button
+          >
+        </div>
+      </ion-label>
+    </ion-item>
+    <ion-item class="mb-2" lines="none" *ngIf="isAvailableAllDates === false">
+      <ion-select
+        multiple="true"
+        label="Müsait Olunmayan Günler"
+        placeholder="Seçilmedi"
+      >
+        <ion-select-option value="25">25.05.2024</ion-select-option>
+        <ion-select-option value="26">26.05.2024</ion-select-option>
+        <ion-select-option value="27">27.05.2024</ion-select-option>
+        <ion-select-option value="28">28.05.2024</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item-divider> Bütçe Onayı </ion-item-divider>
+    <ion-item lines="none">
+      <ion-label>
+        <div class="text-center font-medium mb-3">
+          Projede yer alman halinde
+          <strong>10.000₺</strong>
+          ödeme alacaksın. Ödeme süresi <strong>45 Gün</strong> olacak. Bütçeyi
+          onaylıyor musun?
+        </div>
+
+        <div class="grid">
+          <ion-button
+            (click)="isBudgetConfirmed = !isBudgetConfirmed"
+            [fill]="isBudgetConfirmed === true ? 'solid' : 'outline'"
+            size="small"
+            >Bütçeyi Onaylıyorum</ion-button
+          >
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer class="bg-white">
+  <div class="p-4 grid grid-cols-2 gap-2">
+    <ion-button expand="block" fill="outline" color="danger"
+      >Teklifi Geri Çevir</ion-button
+    >
+    <ion-button expand="block" color="primary">Opsiyonu Onayla</ion-button>
+  </div>
+</ion-footer>

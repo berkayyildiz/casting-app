@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let i of [1,1,1,1,1,1,1,1,1,1]">
+    <ion-item (click)="openModal()" *ngFor="let i of [1,1,1,1,1,1,1,1,1,1]">
       <ion-icon slot="start" name="notifications-circle"> </ion-icon>
       <ion-label>
         <div class="">
