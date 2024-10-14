@@ -1,17 +1,165 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> CV </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" value="info">
+      <ion-segment-button value="info">
+        <ion-label>Bilgilerim</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="education">
+        <ion-label>Eğitim & Deneyim</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="skills">
+        <ion-label>Yetenekler</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content *ngIf="selectedSegment === 'info'" [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>
+      <ion-label> Kişisel Bilgiler </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Doğum Tarihi</ion-label>
+      <ion-datetime-button
+        slot="end"
+        datetime="start-date"
+      ></ion-datetime-button>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime
+            id="start-date"
+            slot="content"
+            presentation="date"
+            [showDefaultButtons]="true"
+            [preferWheel]="true"
+            doneText="Kaydet"
+            cancelText="Vazgeç"
+          >
+            <span slot="title">Doğum Tarihi</span></ion-datetime
+          >
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Yaşadığınız Şehir" placeholder="Seçilmedi">
+        <ion-select-option value="istanbul">İstanbul</ion-select-option>
+        <ion-select-option value="ankara">Ankara</ion-select-option>
+        <ion-select-option value="izmir">İzmir</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Cinsiyet" placeholder="Seçilmedi">
+        <ion-select-option value="erkek">Erkek</ion-select-option>
+        <ion-select-option value="kadın">Kadın</ion-select-option>
+        <ion-select-option value="diğer">Diğer</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-content *ngIf="selectedSegment === 'education'" [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Oyunculuk Eğitimi</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        label="Baş. - Bitiş Yılı"
+        placeholder="2023 - 2024"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Kurum/Okul" placeholder="Kurum Adı"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Bölüm" placeholder="Oyunculuk"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="selectedSegment === 'skills'" [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-select
+        okText="Kaydet"
+        cancelText="Vazgeç"
+        label="Ses/Müzik"
+        placeholder="Seçilmedi"
+        [multiple]="true"
+      >
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select
+        okText="Kaydet"
+        cancelText="Vazgeç"
+        label="Dans"
+        placeholder="Seçilmedi"
+        [multiple]="true"
+      >
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select
+        okText="Kaydet"
+        cancelText="Vazgeç"
+        label="Spor"
+        placeholder="Seçilmedi"
+        [multiple]="true"
+      >
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select
+        okText="Kaydet"
+        cancelText="Vazgeç"
+        label="Yabancı Dil"
+        placeholder="Seçilmedi"
+        [multiple]="true"
+      >
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select
+        okText="Kaydet"
+        cancelText="Vazgeç"
+        label="Şive/Aksan"
+        placeholder="Seçilmedi"
+        [multiple]="true"
+      >
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div class="p-2">
+    <ion-button (click)="cancel()" expand="block" color="secondary"
+      >Kaydet</ion-button
+    >
+  </div>
+</ion-footer>
