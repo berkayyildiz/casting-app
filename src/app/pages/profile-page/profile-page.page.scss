@@ -1,0 +1,13 @@
+table {
+  th {
+    text-align: left;
+  }
+  td,
+  th {
+    padding-right: 1rem;
+    padding-bottom: 0.25rem;
+  }
+  tr:nth-child(even) {
+    border-bottom-width: 1px;
+  }
+}

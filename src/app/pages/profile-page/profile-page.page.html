@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Berkay Yıldız </ion-title>
+    <ion-title> Clara Senizar </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
         />
       </div>
       <div class="flex flex-col justify-start">
-        <h1 class="text-2xl font-bold">Berkay Yıldız</h1>
+        <h1 class="text-2xl font-bold">Clara Senizar</h1>
         <p class="text-gray-500">Oyuncu / İstanbul</p>
         <div class="grid mt-2">
           <ion-button size="small" (click)="openModal()" color="secondary"
@@ -25,50 +25,73 @@
       </div>
     </div>
   </ion-list>
-  <div class="grid w-full gap-px p-px aspect-square grid-cols-2 grid-rows-2">
-    <div class="row-span-2 relative">
-      <img
-        class="absolute inset-0 w-full h-full object-cover object-top"
-        src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/ednfq3168k.jpg?width=600"
-        alt=""
-      />
+
+  <ion-list inset="true">
+    <ion-item-divider>Kolaj</ion-item-divider>
+    <div class="grid w-full gap-px p-px aspect-square grid-cols-2 grid-rows-2">
+      <div class="row-span-2 relative">
+        <img
+          class="absolute inset-0 w-full h-full object-cover object-top"
+          src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/ednfq3168k.jpg?width=600"
+          alt=""
+        />
+      </div>
+      <div class="relative">
+        <img
+          class="absolute inset-0 w-full h-full object-cover object-top"
+          src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/kydmi6l1s9.jpg?width=600"
+          alt=""
+        />
+      </div>
+      <div class="relative">
+        <img
+          class="absolute inset-0 w-full h-full object-cover object-top"
+          src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/mfniv202qua.jpg?height=600"
+          alt=""
+        />
+      </div>
     </div>
-    <div class="relative">
+    <ion-item-divider> <p>3 Gün Önce Güncellendi</p> </ion-item-divider>
+  </ion-list>
+  <ion-list inset="true">
+    <ion-item-divider> Tanıtım Videosu </ion-item-divider>
+
+    <div class="relative w-full aspect-video">
+      <div
+        class="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <ion-icon
+          class="w-20 h-20 text-white"
+          name="play-circle-outline"
+        ></ion-icon>
+      </div>
       <img
         class="absolute inset-0 w-full h-full object-cover object-top"
         src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/kydmi6l1s9.jpg?width=600"
         alt=""
       />
     </div>
-    <div class="relative">
-      <img
-        class="absolute inset-0 w-full h-full object-cover object-top"
-        src="https://cdn.frava.app/agencies/s474E581tgZjKD3qgMHZ/talents/2cmra8z1p82/portfolio/mfniv202qua.jpg?height=600"
-        alt=""
-      />
-    </div>
-  </div>
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Kişisel Bilgiler</ion-label>
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Doğum Yılı</ion-label>
-      1999
-    </ion-item>
-    <ion-item>
-      <ion-label>Boy</ion-label>
-      187cm
-    </ion-item>
-    <ion-item>
-      <ion-label>Kilo</ion-label>
-      85kg
-    </ion-item>
+    <ion-item-divider> <p>1 Gün Önce Güncellendi</p> </ion-item-divider>
   </ion-list>
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Deneyimler</ion-label>
-    </ion-list-header>
+  <ion-list inset="true">
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label> Kişisel Bilgiler </ion-label>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label>Doğum Yılı</ion-label>
+        1999
+      </ion-item>
+      <ion-item>
+        <ion-label>Boy</ion-label>
+        187cm
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Kilo</ion-label>
+        85kg
+      </ion-item>
+    </ion-item-group>
 
     <ion-item-group>
       <ion-item-divider>
@@ -157,11 +180,7 @@
         </ion-label>
       </ion-item>
     </ion-item-group>
-  </ion-list>
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Yetenekler</ion-label>
-    </ion-list-header>
+
     <ion-item-group>
       <ion-item-divider>
         <ion-label> Spor </ion-label>

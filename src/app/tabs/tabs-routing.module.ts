@@ -8,27 +8,31 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'projects',
 
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then((m) => m.Tab1PageModule),
+              import(
+                '../pages/projects-gallery-page/projects-gallery-page-routing.module'
+              ).then((m) => m.ProjectsGalleryPagePageRoutingModule),
           },
           {
             path: 'project',
             loadChildren: () =>
-              import('../project-page/project-page.module').then(
+              import('../pages/project-page/project-page.module').then(
                 (m) => m.ProjectPagePageModule
               ),
           },
         ],
       },
       {
-        path: 'tab2',
+        path: 'notifications',
         loadChildren: () =>
-          import('../tab2/tab2.module').then((m) => m.Tab2PageModule),
+          import('../pages/notifications-page/notifications-page.module').then(
+            (m) => m.NotificationsPagePageModule
+          ),
       },
       {
         path: 'profile',
@@ -39,14 +43,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/projects',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/projects',
     pathMatch: 'full',
   },
 ];

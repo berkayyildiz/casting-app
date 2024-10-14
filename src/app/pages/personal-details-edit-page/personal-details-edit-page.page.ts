@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  selector: 'app-personal-details-edit-page',
+  templateUrl: './personal-details-edit-page.page.html',
+  styleUrls: ['./personal-details-edit-page.page.scss'],
 })
-export class Tab2Page {
+export class PersonalDetailsEditPagePage {
   selectedSegment: string = 'info'; // Default selected segment
 
   // Define variables to hold form data

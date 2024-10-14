@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ModalController } from '@ionic/angular';
-import { Tab2Page } from 'src/app/tab2/tab2.page';
+import { PersonalDetailsEditPagePage } from '../personal-details-edit-page/personal-details-edit-page.page';
 
 @Component({
   selector: 'app-profile-page',
@@ -15,7 +15,7 @@ export class ProfilePagePage {
   constructor(private modalCtrl: ModalController) {}
   async openModal() {
     const modal = await this.modalCtrl.create({
-      component: Tab2Page,
+      component: PersonalDetailsEditPagePage,
     });
     modal.present();
 
