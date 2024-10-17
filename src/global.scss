@@ -41,5 +41,15 @@
 @tailwind utilities;
 
 ion-button {
-  min-height: 1.75rem;
+  min-height: 1.5rem;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+}
+
+ion-modal.dialog {
+  --width: fit-content;
+  --min-width: 250px;
+  --height: fit-content;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
 }

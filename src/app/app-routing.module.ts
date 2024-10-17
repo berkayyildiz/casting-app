@@ -49,6 +49,14 @@ const routes: Routes = [
         './pages/personal-details-edit-page/personal-details-edit-page.module'
       ).then((m) => m.PersonalDetailsEditPagePageModule),
   },
+  {
+    path: 'confirmation-page',
+    loadChildren: () => import('./pages/confirmation-page/confirmation-page.module').then( m => m.ConfirmationPagePageModule)
+  },
+  {
+    path: 'send-audition-page',
+    loadChildren: () => import('./pages/send-audition-page/send-audition-page.module').then( m => m.SendAuditionPagePageModule)
+  },
 ];
 @NgModule({
   imports: [

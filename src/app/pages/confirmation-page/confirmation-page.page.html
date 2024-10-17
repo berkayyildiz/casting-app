@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Fibabank - Akademisyen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" [fullscreen]="true">
+  <ion-list inset="true">
+    <div class="ion-padding grid gap-1">
+      <h1 class="text-xl font-bold">Sözleşme</h1>
+      <h2 class="text-lg font-medium">Gizlilik Tahütnamesi</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, ratione
+        commodi. Earum necessitatibus veritatis esse cupiditate. Animi
+        voluptates beatae alias consequatur doloremque voluptatem explicabo
+        illum hic dolore, tempore sequi minus.
+      </p>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer class="bg-white">
+  <div class="grid gap-1.5 p-2">
+    <ion-button (click)="onClickConfirm()" color="primary"
+      >Kabul Ediyorum</ion-button
+    >
+    <ion-button (click)="onClickCancel()" color="danger" fill="clear"
+      >Kabul Etmiyorum</ion-button
+    >
+  </div>
+</ion-footer>

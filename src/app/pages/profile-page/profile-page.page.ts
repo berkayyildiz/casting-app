@@ -16,6 +16,8 @@ export class ProfilePagePage {
   async openModal() {
     const modal = await this.modalCtrl.create({
       component: PersonalDetailsEditPagePage,
+      initialBreakpoint: 1,
+      breakpoints: [0, 1],
     });
     modal.present();
 
